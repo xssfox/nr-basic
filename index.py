@@ -37,7 +37,7 @@ def handler(event,context):
     # Update accounts
     for user_id in switch_to_basic:
         print(f"Switching {str(user_id)} back to basic")
-        update_response = session.put(f"https://rpm.newrelic.com/user_management/accounts/{os.getenv('ACCOUNT_ID')}/users/{user['user_id']}",
+        update_response = session.put(f"https://rpm.newrelic.com/user_management/accounts/{os.getenv('ACCOUNT_ID')}/users/{user_id}",
           headers=custom_headers,
           json={
               "account_view":{
